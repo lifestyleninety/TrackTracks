@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "ThisMyShit",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Save your music across all platforms.",
+    "description": "The description of the application"
+  }
+}
