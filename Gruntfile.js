@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                 tasks: ['bowerInstall']
             },
             coffee: {
-                files: ['<%= config.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+                files: ['<%= config.app %>/scripts/coffee/{,*/}*.{coffee,litcoffee,coffee.md}'],
                 tasks: ['coffee:chrome'],
                 options: {
                     livereload: true
@@ -110,17 +110,15 @@ module.exports = function (grunt) {
         },
 
         // Make sure code styles are up to par and there are no obvious mistakes
-        jshint: {
+        coffeelint: {
+            app: [
+                '<%= config.app %>/scripts/coffee/{,*}*.coffee'
+            ],
             options: {
-                jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
-            },
-            all: [
-                'Gruntfile.js',
-                '<%= config.app %>/scripts/{,*/}*.js',
-                '!<%= config.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
-            ]
+                max_line_length: {
+                    level: 'ignore'
+                }
+            }
         },
         mocha: {
             all: {
@@ -136,7 +134,7 @@ module.exports = function (grunt) {
             chrome: {
                 files: [{
                     expand: true,
-                    cwd: '<%= config.app %>/scripts',
+                    cwd: '<%= config.app %>/scripts/coffee',
                     src: '{,*/}*.{coffee,litcoffee,coffee.md}',
                     dest: '<%= config.app %>/scripts',
                     ext: '.js'
@@ -145,7 +143,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= config.app %>/scripts',
+                    cwd: '<%= config.app %>/scripts/coffee',
                     src: '{,*/}*.{coffee,litcoffee,coffee.md}',
                     dest: '<%= config.dist %>/scripts',
                     ext: '.js'
@@ -367,7 +365,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('debug', function () {
         grunt.task.run([
-            'jshint',
+            'coffeelint',
             'concurrent:chrome',
             'connect:chrome',
             'watch'
