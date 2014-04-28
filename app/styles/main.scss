@@ -1,4 +1,22 @@
-$padding: 20px;
+$borderRadius: 5px;
+
+$buttonPadding: 10px 15px;
+$buttonFontColor: white;
+$buttonBackground: #80D660;
+
 body {
-    padding: $padding;
+    padding: 10px;
+}
+
+#tools {
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.button {
+    background: $buttonBackground;
+    border-radius: $borderRadius;
+    color: $buttonFontColor;
+    display: inline-block;
+    padding: $buttonPadding;
 }

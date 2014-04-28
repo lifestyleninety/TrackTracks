@@ -1,4 +1,19 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/projects\/ThisMyShit\/app\/styles\/main\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/projects\/TrackTracks\/app\/styles\/main\.scss}line{font-family:\000037}}
 body {
-  padding: 20px;
+  padding: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/projects\/TrackTracks\/app\/styles\/main\.scss}line{font-family:\0000311}}
+#tools {
+  min-width: 300px;
+  min-height: 200px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/projects\/TrackTracks\/app\/styles\/main\.scss}line{font-family:\0000316}}
+.button {
+  background: #80d660;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  padding: 10px 15px;
 }
